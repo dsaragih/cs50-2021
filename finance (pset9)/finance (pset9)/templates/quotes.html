@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quotes
+{% endblock %}
+
+{% block main %}
+    <table class="container">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price (USD)</th>
+                <th>Symbol</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            {% for key in lookup.keys() %}
+                {% if key == 'price' %}
+                    <td>{{lookup[key]|usd}}</td>
+                {% else %}
+                    <td>{{lookup[key]}}</td>
+                {% endif %}
+            {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
