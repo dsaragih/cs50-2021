@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded',
+                function () {
+                  let incorrect = document.querySelectorAll('.incorrect');
+                  let correct = document.querySelector('.correct');
+                  incorrect.forEach(item => {
+                      item.addEventListener('click', event => {
+                        item.style.backgroundColor = 'red';
+                        document.getElementById('reply1').innerHTML = 'Incorrect.';
+                      })
+                    })
+                  correct.addEventListener('click',
+                  function() {
+                      correct.style.backgroundColor = 'green';
+                      document.getElementById('reply1').innerHTML = 'Correct!';
+                  })
+                }
+            );
+
+            document.addEventListener('DOMContentLoaded',
+                function () {
+                    let confirm = document.querySelector('#submit');
+                    let input = document.querySelector('#answer');
+                    confirm.addEventListener('click',
+                        function () {
+                            if (input.value.toLowerCase() == 'never') {
+                                input.style.backgroundColor = 'green';
+                                document.getElementById('reply2').innerHTML = 'Correct!';
+                            }
+                            else {
+                                input.style.backgroundColor = 'red';
+                                document.getElementById('reply2').innerHTML = 'Incorrect';
+                            }
+                        }
+                    )
+                }
+            );
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>
+                    What is the meaning of the greek word idios?
+                </h3>
+
+                <p id="reply1"></p>
+
+                <button class="incorrect">
+                    stupid
+                </button>
+                <button class="correct">
+                    private
+                </button>
+                <button class="incorrect">
+                    idiom
+                </button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>
+                    When can we say 2=3?
+                </h3>
+                <p id="reply2"></p>
+                <input id="answer" type="text">
+                <button id="submit">Submit</button>
+            </div>
+
+        </div>
+    </body>
+</html>

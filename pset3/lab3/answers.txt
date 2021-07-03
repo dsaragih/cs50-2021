@@ -1,0 +1,48 @@
+sort1 uses: bubble
+
+How do you know?: The run times for the sorted and reversed text files differed by a factor of 10,
+signifying that there is a significant asymptotic difference between the worst and best case run times.
+The only sort algorithm among the three which possesses this difference is bubble sort. By elimination, the
+other two must be either merge or selection.
+
+sort2 uses: merge
+
+How do you know?: The run time is faster than sort3 when executed on the random text files indicating that
+the order of its run time is less than that of sort3. Between merge sort and selection sort, merge sort is
+the faster of the two
+
+sort3 uses: selection
+
+How do you know?: By elimination, the last algorithm must be selection sort.
+
+
+------------------------------------------------
+sort 3 (sorted): real    0m0.038s
+user    0m0.024s
+sys     0m0.008s
+sort 3 (reveresed): real    0m0.040s
+user    0m0.028s
+sys     0m0.012s
+sort3 (random): real    0m0.034s
+user    0m0.027s
+sys     0m0.008s
+
+sort 1 (sorted): real    0m0.011s
+user    0m0.000s
+sys     0m0.011s
+
+sort 1 (reversed): real    0m0.101s
+user    0m0.053s
+sys     0m0.004s
+
+sort2 (sorted): real    0m0.022s
+user    0m0.004s
+sys     0m0.019s
+
+sort2 (reversed): real    0m0.044s
+user    0m0.004s
+sys     0m0.024s
+
+sort2 (random): real    0m0.011s
+user    0m0.005s
+sys     0m0.006s
